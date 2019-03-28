@@ -10,6 +10,8 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
+- task: PublishBuildArtifacts@1
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -21,4 +23,3 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-- task: PublishBuildArtifacts@1
